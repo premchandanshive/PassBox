@@ -1,16 +1,68 @@
-# React + Vite
+# 🔐 PassBox
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> A simple and lightweight password manager built with React and Vite.
 
-Currently, two official plugins are available:
+PassBox is a password management web application that allows users to save, view, copy, edit, and delete their website credentials.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+The main focus of this project is **client-side data management and persistence**. Password data is stored in the browser's `localStorage`, so previously saved credentials remain available even after refreshing or reopening the page.
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🚀 Live Demo
 
-## Expanding the ESLint configuration
+🔗 [PassBox](#)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 📸 Preview
+
+![PassBox Preview](#)
+
+---
+
+## ✨ Features
+
+- 🔐 Save website credentials
+- 👤 Store username/email
+- 🔑 Store passwords
+- 👁️ Show/hide password
+- 📋 Copy website, username, and password
+- ✏️ Edit saved credentials
+- 🗑️ Delete credentials
+- 🔄 **Data persists after page refresh**
+- 💾 Uses browser `localStorage` for client-side data persistence
+- 🔔 Toast notifications for user actions
+- 📱 Responsive UI
+- 🔗 GitHub profile button
+- 🎨 Clean and simple interface
+
+---
+
+## 🧠 Memory & Data Management
+
+One of the main concepts demonstrated in this project is **client-side memory/data management**.
+
+When a user saves a password, the application stores the data in the browser's `localStorage`.
+
+### Data Flow
+
+```text
+User enters credentials
+        ↓
+React State
+        ↓
+Save Password
+        ↓
+localStorage
+        ↓
+Browser stores the data
+        ↓
+Page Refresh
+        ↓
+useEffect()
+        ↓
+Read data from localStorage
+        ↓
+React State updated
+        ↓
+Saved passwords appear again
