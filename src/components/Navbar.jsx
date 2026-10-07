@@ -17,7 +17,9 @@ const Navbar = () => {
             <a className=' hover:font-bold' href="/">contact</a>
         </li> */}
       </ul>
-      <button className=' text-white rounded-md w-22 bg-green-700 flex justify-between ring-white ring-1' >
+      <button
+        onClick={() => window.open("https://github.com/premchandanshive", "_blank")}
+        className=' text-white rounded-md w-22 bg-green-700 flex justify-between ring-white ring-1' >
         <img className=' invert w-8 p-1' src="/icon/gethub.svg" alt="github logo" />
         <span className='font-bold px-1  pb-1.5'>GitHub</span>
       </button>
