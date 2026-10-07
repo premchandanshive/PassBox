@@ -105,17 +105,15 @@ const Manneger = () => {
             localStorage.setItem("password", JSON.stringify(passwordArray.filter(item => item.id !== id)))
         }
         //     console.log([...passwordArray, form])
-        toast('Delete Password successfully!', {
-            position: "bottom-right",
-            autoClose: 5000,
-            hideProgressBar: false,
-            closeOnClick: false,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-            theme: "light",
-            transition: "Bounce"
-        })
+        toast.error(
+                "password deleted!",
+                {
+                    position: "bottom-right",
+                    autoClose: 3000,
+                    theme: "light",
+                    transition: Bounce
+                }
+            )
     }
     const editpassword = (id) => {
         // console.log("editing password", id)
@@ -212,7 +210,7 @@ const Manneger = () => {
                                                 <div className=' cursor-pointer ' onClick={() => { copytext(item.site) }}>
                                                     <lord-icon
                                                         style={{ "width": "25px", "height": "25px", "PddingTop": "3px", "PaddingLeft": "3px" }}
-                                                        src="https://cdn.lordicon.com/vjgknpfx.json"
+                                                        // src="https://cdn.lordicon.com/vjgknpfx.json"
                                                         trigger="hover"
                                                         stroke="bold"
                                                         colors="primary:#121331,secondary:">
@@ -227,7 +225,7 @@ const Manneger = () => {
                                             <div className=' cursor-pointer ' onClick={() => { copytext(item.username) }}>
                                                 <lord-icon
                                                     style={{ "width": "25px", "height": "25px", "PaddingTop": "3px", "PaddingLeft": "3px" }}
-                                                    src="https://cdn.lordicon.com/vjgknpfx.json"
+                                                    // src="https://cdn.lordicon.com/vjgknpfx.json"
                                                     trigger="hover"
                                                     stroke="bold"
                                                     colors="primary:#121331,secondary:">
@@ -237,12 +235,12 @@ const Manneger = () => {
                                         </td>
                                         <td className=' text-center '>
                                             <div className='flex items-center justify-center'>
-                                                <span> {item.password} </span>
+                                                <span> {"•".repeat(item.password.length)} </span>
 
                                                 <div className=' cursor-pointer ' onClick={() => { copytext(item.password) }}>
                                                     <lord-icon
                                                         style={{ "width": "25px", "height": "25px", "PaddingTop": "3px", "PaddingLeft": "3px" }}
-                                                        src="https://cdn.lordicon.com/vjgknpfx.json"
+                                                        // src="https://cdn.lordicon.com/vjgknpfx.json"
                                                         trigger="hover"
                                                         stroke="bold"
                                                         colors="primary:#121331,secondary:">
